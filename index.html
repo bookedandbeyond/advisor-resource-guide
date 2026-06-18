@@ -39,7 +39,7 @@ nav{background:var(--warm-slate);padding:0 2rem;display:flex;align-items:center;
 .hero-sub{font-family:'Outfit',sans-serif;font-weight:300;font-size:1rem;color:#a08898;letter-spacing:0.04em;max-width:560px;margin:0 auto 2rem}
 
 /* TOC */
-.toc{display:inline-flex;flex-direction:column;gap:0.4rem;text-align:left;background:rgba(255,255,255,0.05);border:1px solid rgba(204,56,96,0.25);border-radius:4px;padding:1.25rem 1.75rem;margin-top:0.5rem}
+.toc{display:inline-flex;flex-direction:column;gap:0.4rem;text-align:left;padding:0.25rem 0;margin-top:0.75rem}
 .toc-title{font-family:'Outfit',sans-serif;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--cherry);margin-bottom:0.35rem}
 .toc a{font-size:0.85rem;color:#c4a8b8;text-decoration:none;transition:color 0.2s}
 .toc a:hover{color:var(--cherry)}
@@ -74,7 +74,17 @@ section+section{border-top:1px solid var(--dusty-rose)}
 .loom-badge:hover{background:#eecedd}
 .loom-dot{width:10px;height:10px;border-radius:50%;background:var(--cherry);flex-shrink:0}
 
-/* STEP CARDS */
+/* STEP GRID */
+.steps-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0.5rem}
+.step-card{background:rgba(255,255,255,0.04);border:1px solid rgba(204,56,96,0.2);border-radius:6px;padding:1.25rem}
+.step-card-wide{grid-column:1 / -1}
+.step-card-header{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem}
+.step-card-num{font-family:'Raleway',sans-serif;font-weight:800;font-size:1rem;color:var(--cherry);line-height:1;min-width:24px}
+.step-card h3{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dusty-rose);margin-bottom:0.4rem}
+.step-card p{font-size:0.85rem;color:#c4a8b8;line-height:1.65}
+@media(max-width:680px){.steps-grid{grid-template-columns:1fr}.step-card-wide{grid-column:1}}
+
+/* STEP CARDS (howto band stacked — legacy, kept for other uses) */
 .steps{display:flex;flex-direction:column;gap:1rem}
 .step{display:grid;grid-template-columns:48px 1fr;gap:1.25rem;background:#fff;border:1px solid var(--dusty-rose);border-radius:6px;padding:1.4rem}
 .step-num{width:48px;height:48px;border-radius:50%;background:var(--warm-slate);color:var(--cherry);font-family:'Raleway',sans-serif;font-weight:800;font-size:1.05rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -248,63 +258,53 @@ footer a{color:var(--cherry);text-decoration:none}
       Watch the France Workflow Walkthrough on Loom →
     </a>
 
-    <div class="steps">
+    <div class="steps-grid">
 
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-body">
-          <div class="step-tag">Library</div>
-          <h3>Find your workflow in the shared library</h3>
-          <p>In the library, click <strong>Workflows → Shared with Me</strong>. Open the folder for the package you purchased. Each workflow shows the number of automations and tasks. Click on the destination, then click <strong>Make a Copy</strong> — this adds it to your personal library.</p>
+      <div class="step-card">
+        <div class="step-card-header">
+          <span class="step-card-num">01</span>
+          <span class="step-tag">Library</span>
         </div>
+        <h3>Find your workflow</h3>
+        <p>Click <strong>Workflows → Shared with Me</strong>. Open the folder for your package. Click the destination, then <strong>Make a Copy</strong> to add it to your personal library.</p>
       </div>
 
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-body">
-          <div class="step-tag">Trip View</div>
-          <h3>Apply the workflow to a trip</h3>
-          <p>Open the trip, go to <strong>Automations</strong>, and click <strong>Add Workflow</strong>. Select the destination workflow. Based on the trip start date, automation dates populate automatically. Check these against the trip timeline before activating anything.</p>
-          <div class="tip">
-            <strong>Short-lead trips</strong>
-            Workflows are built for longer planning timelines. If a trip departs soon, automations with a 150-day trigger will already be past — you'll need to switch the trigger to <em>Automation Added</em> and set a day offset instead.
-          </div>
+      <div class="step-card">
+        <div class="step-card-header">
+          <span class="step-card-num">02</span>
+          <span class="step-tag">Trip View</span>
         </div>
+        <h3>Apply to a trip</h3>
+        <p>Open the trip → <strong>Automations → Add Workflow</strong>. Select the destination. Automation dates populate from the trip start date — check them before activating anything.</p>
+        <div class="tip" style="margin-top:0.75rem"><strong>Short-lead trips</strong>If a trip departs soon, switch triggers with a 150-day timing to <em>Automation Added</em> and set a day offset.</div>
       </div>
 
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-body">
-          <div class="step-tag">Timing</div>
-          <h3>Adjust automation triggers as needed</h3>
-          <p>Click any automation to edit it. Change the trigger from <strong>Trip Start</strong> to <strong>Automation Added</strong> if the original date has passed, then set the offset — <em>Immediately</em> or <em>After Event</em> with a day count. The system autosaves. Click <strong>Save and Close</strong>.</p>
-          <div class="tip">
-            <strong>Example — France trip Aug 8–22</strong>
-            A 150-day automation would fire around March — already past. Switch to <em>Automation Added → After Event → 45 days</em> to land on Aug 2, just before departure.
-          </div>
+      <div class="step-card">
+        <div class="step-card-header">
+          <span class="step-card-num">03</span>
+          <span class="step-tag">Timing</span>
         </div>
+        <h3>Adjust triggers as needed</h3>
+        <p>Click any automation to edit. Switch from <strong>Trip Start</strong> to <strong>Automation Added → After Event</strong> with a day count if the original date has passed. System autosaves.</p>
+        <div class="tip" style="margin-top:0.75rem"><strong>France example</strong>150-day trigger fires in March for an Aug trip — switch to <em>After Event → 45 days</em> to land Aug 2.</div>
       </div>
 
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-body">
-          <div class="step-tag">Review</div>
-          <h3>Sort by status and confirm your send schedule</h3>
-          <p>Click <strong>Sort by Status</strong> in the automations view. Active automations appear at the top with confirmed send dates. Inactive ones (like EES, or sub-destination emails that don't apply) remain visible but won't send until toggled on.</p>
+      <div class="step-card">
+        <div class="step-card-header">
+          <span class="step-card-num">04</span>
+          <span class="step-tag">Review</span>
         </div>
+        <h3>Confirm your send schedule</h3>
+        <p>Click <strong>Sort by Status</strong>. Active automations show confirmed send dates at the top. Inactive ones (EES, unused sub-destinations) remain visible but won't send until toggled on.</p>
       </div>
 
-      <div class="step">
-        <div class="step-num">05</div>
-        <div class="step-body">
-          <div class="step-tag">Email Templates</div>
-          <h3>Customize an email template (optional)</h3>
-          <p>In the library, go to <strong>Emails</strong> and open the destination folder. Click <strong>Make a Copy</strong> on any template you want to personalize — for example to add your Amazon affiliate links. Rename it so you can find it. Then return to the workflow, click the <strong>three dots</strong> on the automation, select <strong>Delete Action → Send Email from Library</strong>, and choose your updated version.</p>
-          <div class="tip">
-            <strong>Tip</strong>
-            Set recipients to <em>All Travelers</em> and send to <em>each recipient individually</em>. Toggle the automation to Active when ready.
-          </div>
+      <div class="step-card step-card-wide">
+        <div class="step-card-header">
+          <span class="step-card-num">05</span>
+          <span class="step-tag">Email Templates</span>
         </div>
+        <h3>Customize a template (optional)</h3>
+        <p>In the library go to <strong>Emails</strong>, open the destination folder, and click <strong>Make a Copy</strong> on any template you want to personalize — e.g. to add Amazon affiliate links. Rename it. Then in the workflow click the <strong>three dots</strong> on the automation → <strong>Delete Action → Send Email from Library</strong> and select your version. Set recipients to <em>All Travelers — each individually</em>, then toggle Active.</p>
       </div>
 
     </div>
