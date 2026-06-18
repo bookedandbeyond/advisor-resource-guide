@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booked &amp; Beyond — Email Template &amp; Workflow Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --warm-slate:#2E2030;
+  --cherry:#CC3860;
+  --dusty-rose:#F4E2EC;
+  --blush-white:#FCF8FA;
+}
+
+body{background:var(--blush-white);color:var(--warm-slate);font-family:'Outfit',sans-serif;font-weight:400;font-size:16px;line-height:1.7}
+
+/* NAV */
+nav{background:var(--warm-slate);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-amp{font-family:'Raleway',sans-serif;font-weight:800;font-size:28px;color:var(--cherry);line-height:1}
+.nav-wordmark{display:flex;flex-direction:column;border-left:1px solid #5a4060;padding-left:12px}
+.nav-wordmark span{font-family:'Raleway',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.46em;color:var(--dusty-rose);line-height:1.3}
+.nav-rule{height:1px;background:var(--cherry);width:100%;margin:2px 0}
+.nav-tagline{font-family:'Outfit',sans-serif;font-weight:300;font-size:9px;letter-spacing:0.25em;color:#a08090;text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--dusty-rose);text-decoration:none;opacity:0.7;transition:opacity 0.2s,color 0.2s}
+.nav-links a:hover{opacity:1;color:var(--cherry)}
+
+/* HERO */
+.hero{background:var(--warm-slate);padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'&';font-family:'Raleway',sans-serif;font-weight:800;font-size:420px;color:rgba(204,56,96,0.07);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;line-height:1}
+.hero-eyebrow{font-family:'Outfit',sans-serif;font-weight:300;font-size:11px;letter-spacing:0.35em;text-transform:uppercase;color:var(--cherry);margin-bottom:1.25rem}
+.hero h1{font-family:'Raleway',sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.25rem);letter-spacing:0.12em;text-transform:uppercase;color:var(--dusty-rose);line-height:1.1}
+.hero h1 span{color:var(--cherry)}
+.hero-rule{width:60px;height:2px;background:var(--cherry);margin:1.5rem auto}
+.hero-sub{font-family:'Outfit',sans-serif;font-weight:300;font-size:1rem;color:#a08898;letter-spacing:0.04em;max-width:560px;margin:0 auto 2rem}
+
+/* TOC */
+.toc{display:inline-flex;flex-direction:column;gap:0.4rem;text-align:left;background:rgba(255,255,255,0.05);border:1px solid rgba(204,56,96,0.25);border-radius:4px;padding:1.25rem 1.75rem;margin-top:0.5rem}
+.toc-title{font-family:'Outfit',sans-serif;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--cherry);margin-bottom:0.35rem}
+.toc a{font-size:0.85rem;color:#c4a8b8;text-decoration:none;transition:color 0.2s}
+.toc a:hover{color:var(--cherry)}
+.toc-num{color:var(--cherry);margin-right:6px;font-family:'Raleway',sans-serif;font-weight:700}
+
+/* LAYOUT */
+.container{max-width:980px;margin:0 auto;padding:0 2rem}
+
+/* HOW-TO SECTION (new) */
+.howto-band{background:var(--warm-slate);padding:3.5rem 0}
+.howto-band .section-eyebrow{color:var(--cherry)}
+.howto-band .section-title{color:var(--dusty-rose)}
+.howto-band p,.howto-band li{color:#c4a8b8}
+.howto-band .step-body p{color:#c4a8b8}
+.howto-band .step{background:rgba(255,255,255,0.04);border-color:rgba(204,56,96,0.2)}
+.howto-band .step-body h3{color:var(--dusty-rose)}
+.howto-band .tip{background:rgba(244,226,236,0.08);border-left-color:var(--cherry)}
+.howto-band .tip strong{color:var(--cherry)}
+.howto-band .tip{color:#c4a8b8}
+
+/* SECTIONS */
+section{padding:3.5rem 0}
+section+section{border-top:1px solid var(--dusty-rose)}
+
+.section-eyebrow{font-family:'Outfit',sans-serif;font-size:10px;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:var(--cherry);margin-bottom:0.4rem}
+.section-title{font-family:'Raleway',sans-serif;font-weight:700;font-size:1.55rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-slate);margin-bottom:0.4rem}
+.section-rule{width:40px;height:2px;background:var(--cherry);margin-bottom:1.75rem}
+.section-intro{font-size:0.95rem;color:#5a4c62;max-width:700px;margin-bottom:2rem;line-height:1.75}
+
+/* LOOM VIDEO BADGE */
+.loom-badge{display:inline-flex;align-items:center;gap:8px;background:var(--dusty-rose);border:1px solid rgba(204,56,96,0.3);border-radius:4px;padding:0.5rem 1rem;font-size:0.8rem;color:var(--warm-slate);margin-bottom:1.75rem;text-decoration:none;transition:background 0.2s}
+.loom-badge:hover{background:#eecedd}
+.loom-dot{width:10px;height:10px;border-radius:50%;background:var(--cherry);flex-shrink:0}
+
+/* STEP CARDS */
+.steps{display:flex;flex-direction:column;gap:1rem}
+.step{display:grid;grid-template-columns:48px 1fr;gap:1.25rem;background:#fff;border:1px solid var(--dusty-rose);border-radius:6px;padding:1.4rem}
+.step-num{width:48px;height:48px;border-radius:50%;background:var(--warm-slate);color:var(--cherry);font-family:'Raleway',sans-serif;font-weight:800;font-size:1.05rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-body h3{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-slate);margin-bottom:0.35rem}
+.step-body p{font-size:0.875rem;color:#5a4c62;line-height:1.65}
+.step-tag{display:inline-block;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cherry);background:var(--dusty-rose);border-radius:2px;padding:2px 7px;margin-bottom:5px}
+
+/* TIP */
+.tip{background:var(--dusty-rose);border-left:3px solid var(--cherry);border-radius:0 4px 4px 0;padding:0.875rem 1.1rem;margin-top:1rem;font-size:0.85rem;color:var(--warm-slate);line-height:1.65}
+.tip strong{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--cherry);display:block;margin-bottom:0.2rem}
+
+/* CARDS ROW */
+.cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-bottom:2rem}
+.info-card{background:#fff;border:1px solid var(--dusty-rose);border-radius:6px;padding:1.25rem}
+.info-card-icon{font-size:1.4rem;margin-bottom:0.6rem}
+.info-card h3{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--warm-slate);margin-bottom:0.4rem}
+.info-card p{font-size:0.825rem;color:#6a5070;line-height:1.6}
+
+/* FLOW STEPS */
+.flow{display:flex;align-items:flex-start;gap:0;flex-wrap:wrap;margin-bottom:2.5rem}
+.flow-step{flex:1;min-width:140px;text-align:center;padding:1.25rem 0.75rem;position:relative}
+.flow-step+.flow-step::before{content:'›';position:absolute;left:-8px;top:50%;transform:translateY(-50%);font-size:1.25rem;color:var(--cherry);line-height:1}
+.flow-num{width:36px;height:36px;border-radius:50%;background:var(--warm-slate);color:var(--cherry);font-family:'Raleway',sans-serif;font-weight:800;font-size:0.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto 0.6rem}
+.flow-step h4{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--warm-slate);margin-bottom:0.3rem}
+.flow-step p{font-size:0.8rem;color:#6a5070;line-height:1.55}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin-bottom:1.5rem;border-radius:6px;border:1px solid var(--dusty-rose)}
+table{width:100%;border-collapse:collapse;font-size:0.85rem;background:#fff}
+thead{background:var(--warm-slate)}
+thead th{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--dusty-rose);padding:0.75rem 1rem;text-align:left;white-space:nowrap}
+tbody tr:nth-child(even){background:#fdf5f8}
+tbody tr:hover{background:#f8ecf3}
+td{padding:0.65rem 1rem;color:var(--warm-slate);border-bottom:1px solid var(--dusty-rose);vertical-align:top;line-height:1.5}
+td:last-child,th:last-child{border-right:none}
+
+/* STATUS PILLS */
+.pill{display:inline-block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:3px;padding:2px 8px;font-family:'Outfit',sans-serif;font-weight:400}
+.pill-active{background:#d6f0e0;color:#1a5c35}
+.pill-activate{background:#fff0e0;color:#7a4a00}
+.pill-inactive{background:#f0e0e0;color:#7a1a2a}
+
+/* TASK LIST */
+.task-list{list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin:1rem 0 1.5rem}
+.task-list li{display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid var(--dusty-rose);border-radius:5px;padding:0.875rem 1rem;font-size:0.875rem}
+.task-num{width:24px;height:24px;border-radius:50%;background:var(--cherry);color:#fff;font-family:'Raleway',sans-serif;font-weight:700;font-size:0.75rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.task-list h4{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-slate);margin-bottom:0.2rem}
+.task-list p{font-size:0.825rem;color:#6a5070}
+
+/* ACCORDION */
+.accordion{border:1px solid var(--dusty-rose);border-radius:8px;overflow:hidden;margin-bottom:1.5rem}
+.accordion-header{width:100%;background:#fff;border:none;cursor:pointer;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;text-align:left;transition:background 0.2s}
+.accordion-header:hover{background:var(--dusty-rose)}
+.accordion-header-left{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap}
+.accordion-flag{font-size:1.3rem;line-height:1}
+.accordion-title{font-family:'Raleway',sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-slate)}
+.accordion-subtitle{font-family:'Outfit',sans-serif;font-size:0.8rem;color:#8a6878;font-weight:300}
+.accordion-meta{display:flex;align-items:center;gap:0.5rem;flex-shrink:0}
+.accordion-count{font-family:'Outfit',sans-serif;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:#a08090}
+.accordion-chevron{color:var(--cherry);font-size:1rem;transition:transform 0.3s;flex-shrink:0;line-height:1}
+.accordion-body{display:none;padding:1.5rem;border-top:1px solid var(--dusty-rose);background:var(--blush-white)}
+.accordion-body.open{display:block}
+.accordion-header.open .accordion-chevron{transform:rotate(180deg)}
+.accordion-header.open{background:var(--dusty-rose)}
+
+/* AUTO APPLY BOX */
+.auto-apply{background:var(--warm-slate);border-radius:6px;padding:1.25rem 1.5rem;margin-top:1.25rem}
+.auto-apply h4{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cherry);margin-bottom:0.5rem}
+.auto-apply p{font-size:0.875rem;color:#c4a8b8;line-height:1.65}
+.auto-apply code{background:rgba(204,56,96,0.2);color:var(--cherry);padding:1px 6px;border-radius:3px;font-size:0.8rem}
+
+/* WARNING BOX */
+.warning{background:#fff8e6;border-left:3px solid #e6a800;border-radius:0 4px 4px 0;padding:0.875rem 1.1rem;margin:1rem 0;font-size:0.875rem;color:#5a4010;line-height:1.65}
+.warning strong{color:#7a5a00;display:block;font-family:'Raleway',sans-serif;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem}
+
+/* AMAZON */
+.affiliate-hero{background:var(--warm-slate);border-radius:6px;padding:1.5rem 2rem;margin-bottom:2rem;display:flex;align-items:center;gap:1.5rem}
+.affiliate-pct{font-family:'Raleway',sans-serif;font-weight:800;font-size:2.5rem;color:var(--cherry)}
+.affiliate-hero p{font-size:0.875rem;color:#c4a8b8;line-height:1.65}
+.affiliate-hero h3{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--dusty-rose);margin-bottom:0.3rem}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.feature-card{background:#fff;border:1px solid var(--dusty-rose);border-radius:6px;padding:1.25rem}
+.feature-card h3{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--warm-slate);margin-bottom:0.4rem;display:flex;align-items:center;gap:8px}
+.feature-card h3::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cherry);flex-shrink:0}
+.feature-card p{font-size:0.85rem;color:#5a4c62;line-height:1.65}
+
+/* CHECKLIST */
+.checklist{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.checklist li{display:flex;align-items:flex-start;gap:10px;font-size:0.875rem;color:#5a4c62}
+.checklist li::before{content:'✓';color:var(--cherry);font-weight:700;flex-shrink:0;margin-top:2px}
+
+/* NUMBERED STEPS (amazon) */
+.num-steps{display:flex;flex-direction:column;gap:0.875rem;margin:1.25rem 0}
+.num-step{display:grid;grid-template-columns:32px 1fr;gap:1rem;align-items:start}
+.num-step-n{width:32px;height:32px;border-radius:50%;background:var(--cherry);color:#fff;font-family:'Raleway',sans-serif;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.num-step-body h4{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-slate);margin-bottom:0.25rem}
+.num-step-body p{font-size:0.85rem;color:#5a4c62;line-height:1.65}
+.num-step-body a{color:var(--cherry);text-decoration:none}
+.num-step-body a:hover{text-decoration:underline}
+.num-step-body code{background:var(--dusty-rose);color:var(--warm-slate);padding:1px 6px;border-radius:3px;font-size:0.8rem}
+
+/* TROUBLESHOOT */
+.trouble-list{display:flex;flex-direction:column;gap:1rem;margin-top:1.25rem}
+.trouble-item{background:#fff;border:1px solid var(--dusty-rose);border-radius:6px;padding:1.1rem 1.25rem}
+.trouble-item h4{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-slate);margin-bottom:0.35rem}
+.trouble-item p{font-size:0.875rem;color:#5a4c62;line-height:1.65}
+.trouble-item code{background:var(--dusty-rose);color:var(--warm-slate);padding:1px 5px;border-radius:3px;font-size:0.8rem}
+
+/* FOOTER */
+footer{background:var(--warm-slate);padding:2.5rem 2rem;text-align:center}
+footer p{font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#6a5070}
+footer a{color:var(--cherry);text-decoration:none}
+.footer-rule{width:40px;height:1px;background:var(--cherry);margin:1rem auto}
+
+[id]{scroll-margin-top:80px}
+@media(max-width:680px){.two-col{grid-template-columns:1fr}.nav-links{display:none}.flow{flex-direction:column}.flow-step+.flow-step::before{display:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <span class="nav-amp">&amp;</span>
+    <div class="nav-wordmark">
+      <span>BOOKED</span>
+      <div class="nav-rule"></div>
+      <span>BEYOND</span>
+      <div class="nav-tagline">Tools · Workflows · Training</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#trigger-timings">Timings</a></li>
+    <li><a href="#europe-general">Europe</a></li>
+    <li><a href="#uk">Destinations</a></li>
+    <li><a href="#amazon">Affiliate</a></li>
+    <li><a href="#tips">Tips</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-eyebrow">Advisor Resource Guide</div>
+  <h1>Email Template <span>&amp;</span><br>Workflow Guide</h1>
+  <div class="hero-rule"></div>
+  <p class="hero-sub">Everything you need to set up, connect, and automate your destination-specific email sequences in Tern — from the first inspiration email to day-of-trip reminders.</p>
+  <nav class="toc">
+    <div class="toc-title">In this guide</div>
+    <a href="#how-to-use"><span class="toc-num">↗</span>Video walkthrough &amp; quick-start steps</a>
+    <a href="#how-it-works"><span class="toc-num">1.</span>How it all connects</a>
+    <a href="#trigger-timings"><span class="toc-num">2.</span>Default trigger timings</a>
+    <a href="#europe-general"><span class="toc-num">3.</span>Europe general emails</a>
+    <a href="#uk"><span class="toc-num">4.</span>Destination workflows — UK, France, Greece</a>
+    <a href="#amazon"><span class="toc-num">5.</span>Amazon affiliate links</a>
+    <a href="#tips"><span class="toc-num">6.</span>Setup tips &amp; troubleshooting</a>
+  </nav>
+</header>
+
+<!-- VIDEO WALKTHROUGH (NEW) -->
+<div class="howto-band" id="how-to-use">
+  <div class="container">
+    <div class="section-eyebrow">Video Walkthrough</div>
+    <h2 class="section-title" style="color:var(--dusty-rose)">Watch Before You Start</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro" style="color:#c4a8b8;max-width:640px">The Loom video below walks through the France workflow end-to-end. Watch it first, then use the step-by-step instructions below as your reference while you set up each destination.</p>
+
+    <a class="loom-badge" href="#" style="background:rgba(204,56,96,0.15);border-color:rgba(204,56,96,0.35);color:var(--dusty-rose)">
+      <span class="loom-dot"></span>
+      Watch the France Workflow Walkthrough on Loom →
+    </a>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <div class="step-tag">Library</div>
+          <h3>Find your workflow in the shared library</h3>
+          <p>In the library, click <strong>Workflows → Shared with Me</strong>. Open the folder for the package you purchased. Each workflow shows the number of automations and tasks. Click on the destination, then click <strong>Make a Copy</strong> — this adds it to your personal library.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <div class="step-tag">Trip View</div>
+          <h3>Apply the workflow to a trip</h3>
+          <p>Open the trip, go to <strong>Automations</strong>, and click <strong>Add Workflow</strong>. Select the destination workflow. Based on the trip start date, automation dates populate automatically. Check these against the trip timeline before activating anything.</p>
+          <div class="tip">
+            <strong>Short-lead trips</strong>
+            Workflows are built for longer planning timelines. If a trip departs soon, automations with a 150-day trigger will already be past — you'll need to switch the trigger to <em>Automation Added</em> and set a day offset instead.
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <div class="step-tag">Timing</div>
+          <h3>Adjust automation triggers as needed</h3>
+          <p>Click any automation to edit it. Change the trigger from <strong>Trip Start</strong> to <strong>Automation Added</strong> if the original date has passed, then set the offset — <em>Immediately</em> or <em>After Event</em> with a day count. The system autosaves. Click <strong>Save and Close</strong>.</p>
+          <div class="tip">
+            <strong>Example — France trip Aug 8–22</strong>
+            A 150-day automation would fire around March — already past. Switch to <em>Automation Added → After Event → 45 days</em> to land on Aug 2, just before departure.
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <div class="step-tag">Review</div>
+          <h3>Sort by status and confirm your send schedule</h3>
+          <p>Click <strong>Sort by Status</strong> in the automations view. Active automations appear at the top with confirmed send dates. Inactive ones (like EES, or sub-destination emails that don't apply) remain visible but won't send until toggled on.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-body">
+          <div class="step-tag">Email Templates</div>
+          <h3>Customize an email template (optional)</h3>
+          <p>In the library, go to <strong>Emails</strong> and open the destination folder. Click <strong>Make a Copy</strong> on any template you want to personalize — for example to add your Amazon affiliate links. Rename it so you can find it. Then return to the workflow, click the <strong>three dots</strong> on the automation, select <strong>Delete Action → Send Email from Library</strong>, and choose your updated version.</p>
+          <div class="tip">
+            <strong>Tip</strong>
+            Set recipients to <em>All Travelers</em> and send to <em>each recipient individually</em>. Toggle the automation to Active when ready.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <div class="section-eyebrow">Section 01</div>
+    <h2 class="section-title">How It All Connects</h2>
+    <div class="section-rule"></div>
+
+    <div class="cards-row">
+      <div class="info-card">
+        <div class="info-card-icon">✉️</div>
+        <h3>Email Templates</h3>
+        <p>Pre-written, destination-specific emails are already in your Tern Library — covering inspiration, must-see/do highlights, transportation, money tips, and packing, timed for each stage of the planning journey.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">⚡</div>
+        <h3>Automations</h3>
+        <p>Each workflow comes pre-populated with automations linked to the right email templates. Automations must be toggled to <strong>Active</strong> to send, and trigger timings are configurable per trip.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">🗂️</div>
+        <h3>Workflows</h3>
+        <p>Destination workflows bundle all automations and tasks together. They have been built for you — apply a workflow to a trip and the full email sequence is ready to configure and activate.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">🏷️</div>
+        <h3>Auto-Apply Tags</h3>
+        <p>Once you're comfortable, enable auto-apply: tag a trip <code style="background:var(--dusty-rose);padding:1px 5px;border-radius:3px;font-size:0.8rem">france</code> or <code style="background:var(--dusty-rose);padding:1px 5px;border-radius:3px;font-size:0.8rem">uk</code> and the matching workflow applies automatically.</p>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>Recommendation — start manually</strong>
+      We recommend manually adding workflows to trips for the first several bookings, until you're fully comfortable reviewing and updating the automation trigger timings. Once the process feels routine, enable the auto-apply tag trigger to run hands-free going forward.
+    </div>
+  </section>
+
+  <!-- TRIGGER TIMINGS -->
+  <section id="trigger-timings">
+    <div class="section-eyebrow">Section 02</div>
+    <h2 class="section-title">Default Trigger Timings</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">All automations are set by default to fire relative to the trip start date. The sequence below reflects the intended arc — from early inspiration through entry requirements, logistics, and a final send-off. Each timing can be adjusted per trip as needed.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Email Type</th>
+            <th>Default Trigger</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Inspiration</strong></td>
+            <td>150 days before trip</td>
+            <td>Plant the seed — destination highlights, atmosphere, what makes it special</td>
+          </tr>
+          <tr>
+            <td><strong>Packing List</strong></td>
+            <td>120 days before trip</td>
+            <td>What to pack, destination-specific gear recommendations, affiliate links</td>
+          </tr>
+          <tr>
+            <td><strong>Visa / Entry Requirements</strong></td>
+            <td>60 days before trip</td>
+            <td>ETA, EES, or other entry requirement reminders with action steps</td>
+          </tr>
+          <tr>
+            <td><strong>Transportation</strong></td>
+            <td>40 days before trip</td>
+            <td>Getting around — trains, tubes, transfers, local transit tips</td>
+          </tr>
+          <tr>
+            <td><strong>Money Matters</strong></td>
+            <td>34 days before trip</td>
+            <td>Currency, card tips, spending advice, EU vs. non-EU considerations</td>
+          </tr>
+          <tr>
+            <td><strong>Must See &amp; Do</strong></td>
+            <td>30 days before trip</td>
+            <td>Curated experiences, guidebook recommendations, things not to miss</td>
+          </tr>
+          <tr>
+            <td><strong>VAT</strong></td>
+            <td>10 days before trip</td>
+            <td>VAT refund eligibility and how to claim at the airport on departure</td>
+          </tr>
+          <tr>
+            <td><strong>Advisor Bon Voyage</strong></td>
+            <td>1–3 days before trip</td>
+            <td>A personal send-off from you — final reminders, your contact info, excitement</td>
+          </tr>
+          <tr>
+            <td><strong>Other Booked workflow emails</strong></td>
+            <td>Varies</td>
+            <td>Any additional automations from your Booked workflow — booking confirmations, check-in reminders, post-trip follow-ups</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip">
+      <strong>Adjusting for short-lead trips</strong>
+      If a booking comes in with less than 150 days to departure, some triggers will already be in the past and won't fire. Switch those automations from <em>Trip Start</em> to <em>Automation Added → After Event</em> and set a day offset that puts the send date within the remaining timeline. See the video walkthrough above for a step-by-step example.
+    </div>
+  </section>
+
+  <!-- EUROPE GENERAL -->
+  <section id="europe-general">
+    <div class="section-eyebrow">Section 03</div>
+    <h2 class="section-title">🌍 Europe General</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">These emails are available for all European trips and live in the BB Europe folder. They are designed to complement destination-specific workflows — add them to any European trip where a destination-specific version doesn't already cover the same topic.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Template Name</th>
+            <th>Purpose</th>
+            <th>Suggested Trigger</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Your European Packing List</td>
+            <td>General Europe packing tips with affiliate links</td>
+            <td>120 days before trip</td>
+            <td>Use where no destination-specific packing list exists</td>
+          </tr>
+          <tr>
+            <td>EU VAT Info</td>
+            <td>VAT refund eligibility and how to claim at departure</td>
+            <td>34 days before trip</td>
+            <td>Applies to EU member countries only</td>
+          </tr>
+          <tr>
+            <td>Money Matters – Europe</td>
+            <td>Currency, card tips, and spending advice for European Union destinations</td>
+            <td>34 days before trip</td>
+            <td>Designed for EU member countries. If the destination is not an EU member (e.g. UK, Switzerland, Norway), use the country-specific currency email instead</td>
+          </tr>
+          <tr>
+            <td>European Union Entry Requirements — EES</td>
+            <td>New EU Entry/Exit System (EES) requirement — timing to be determined</td>
+            <td>60 days before trip</td>
+            <td>Keep inactive until EES launch date is confirmed. EU member destinations only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip">
+      <strong>EU member vs. non-EU destinations</strong>
+      Money Matters – Europe and the EES entry requirement apply to European Union member countries. For non-EU destinations — including the United Kingdom, Switzerland, and Norway — use the country-specific currency and entry requirement emails in the destination workflow instead.
+    </div>
+  </section>
+
+  <!-- DESTINATION WORKFLOWS -->
+  <section id="uk">
+    <div class="section-eyebrow">Sections 04 – 06</div>
+    <h2 class="section-title">Destination Workflows</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">Each destination workflow contains the automations and tasks listed below. Click a destination to expand its full automation list. All three workflows share the same two tasks: <strong>Schedule send visa/eta email</strong> (due 7 days after task creation) and <strong>Adjust &amp; activate automation timings</strong> (due 10 days after task creation).</p>
+
+    <!-- UK ACCORDION -->
+    <div class="accordion" id="uk-accordion">
+      <button class="accordion-header" onclick="toggleAccordion('uk-body', this)" aria-expanded="false">
+        <div class="accordion-header-left">
+          <span class="accordion-flag">🇬🇧</span>
+          <div>
+            <div class="accordion-title">United Kingdom</div>
+            <div class="accordion-subtitle">London · Scotland · England</div>
+          </div>
+        </div>
+        <div class="accordion-meta">
+          <span class="accordion-count">11 automations</span>
+          <span class="accordion-chevron">▼</span>
+        </div>
+      </button>
+      <div class="accordion-body" id="uk-body">
+        <div class="table-wrap" style="margin-bottom:1.25rem">
+          <table>
+            <thead>
+              <tr><th>Automation Name</th><th>Trigger</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>United Kingdom Inspiration <span style="font-size:0.78rem;color:#8a6878">(update with Amazon affiliate links)</span></td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>Scotland Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>London Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>Packing List</td><td>120 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>ETA Requirement</td><td>60 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>United Kingdom Transportation</td><td>40 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>UK Currency</td><td>34 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>UK Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>London Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>Scotland Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>UK VAT Notice</td><td>10 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip" style="margin-top:0">
+          <strong>Activate per sub-destination</strong>
+          Inspiration and Must See/Do emails cover UK broadly, London, and Scotland separately. Activate only the ones that match where your client is going — if they're visiting London only, activate London Inspiration and London Must See/Do and leave the others inactive.
+        </div>
+        <div class="auto-apply" style="margin-top:1.25rem">
+          <h4>⚙️ Auto-Apply</h4>
+          <p>Workflow auto-applies when the <code>uk</code> tag is added to a trip. Enable auto-apply in workflow settings once you're comfortable reviewing and adjusting trigger timings manually first.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRANCE ACCORDION -->
+    <div class="accordion" id="france-accordion">
+      <button class="accordion-header" onclick="toggleAccordion('france-body', this)" aria-expanded="false">
+        <div class="accordion-header-left">
+          <span class="accordion-flag">🇫🇷</span>
+          <div>
+            <div class="accordion-title">France</div>
+            <div class="accordion-subtitle">Paris · French Riviera · Monaco</div>
+          </div>
+        </div>
+        <div class="accordion-meta">
+          <span class="accordion-count">14 automations</span>
+          <span class="accordion-chevron">▼</span>
+        </div>
+      </button>
+      <div class="accordion-body" id="france-body">
+
+        <a class="loom-badge" href="#" style="margin-bottom:1.25rem">
+          <span class="loom-dot"></span>
+          Watch the France workflow walkthrough on Loom →
+        </a>
+
+        <div class="table-wrap" style="margin-bottom:1.25rem">
+          <table>
+            <thead>
+              <tr><th>Automation Name</th><th>Trigger</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>French Riviera Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>Paris Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>France Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>Monaco Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>Packing List</td><td>120 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>ETIAS Requirement <span style="font-size:0.78rem;color:#8a6878">(create when launched)</span></td><td>60 days before trip</td><td><span class="pill pill-inactive">Inactive — timing TBD</span></td></tr>
+              <tr><td>France Transportation</td><td>40 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>Money Tips Paris</td><td>34 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>France Must See &amp; Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>Monaco Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>French Riviera Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>Paris Must See &amp; Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
+              <tr><td>Euro VAT</td><td>10 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>NEW # TBD European Union New ESS</td><td>None — TBD</td><td><span class="pill pill-inactive">Inactive — timing TBD</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="warning" style="margin-top:0;margin-bottom:1.25rem">
+          <strong>⚠️ ETIAS &amp; EES — both pending launch</strong>
+          Two automations are inactive with no trigger set. ETIAS (EU travel authorisation) and EES (EU Entry/Exit System) have not officially launched. Keep both inactive until launch dates are confirmed, then update the email template and trigger timing before activating.
+        </div>
+        <div class="tip" style="margin-top:0">
+          <strong>Activate per sub-destination</strong>
+          France covers four sub-destinations. Activate only the inspiration and Must See/Do emails relevant to your client's itinerary — e.g. Paris Inspiration + Paris Must See &amp; Do for a Paris-only trip. Leave the others inactive.
+        </div>
+        <div class="auto-apply" style="margin-top:1.25rem">
+          <h4>⚙️ Auto-Apply</h4>
+          <p>Workflow auto-applies when the <code>france</code> tag is added to a trip. Enable auto-apply in workflow settings once you're comfortable reviewing and adjusting trigger timings manually first.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GREECE ACCORDION -->
+    <div class="accordion" id="greece-accordion">
+      <button class="accordion-header" onclick="toggleAccordion('greece-body', this)" aria-expanded="false">
+        <div class="accordion-header-left">
+          <span class="accordion-flag">🇬🇷</span>
+          <div>
+            <div class="accordion-title">Greece</div>
+            <div class="accordion-subtitle">Greece · Islands</div>
+          </div>
+        </div>
+        <div class="accordion-meta">
+          <span class="accordion-count">7 automations</span>
+          <span class="accordion-chevron">▼</span>
+        </div>
+      </button>
+      <div class="accordion-body" id="greece-body">
+        <div class="table-wrap" style="margin-bottom:1.25rem">
+          <table>
+            <thead>
+              <tr><th>Automation Name</th><th>Trigger</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Greece Inspiration</td><td>150 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>Packing List</td><td>120 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>ETIAS Requirement <span style="font-size:0.78rem;color:#8a6878">(create when launched)</span></td><td>60 days before trip</td><td><span class="pill pill-inactive">Inactive — timing TBD</span></td></tr>
+              <tr><td>Euro Currency</td><td>34 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>Greece Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>VAT</td><td>10 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>NEW # TBD European Union New ESS</td><td>None — TBD</td><td><span class="pill pill-inactive">Inactive — timing TBD</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip" style="margin-top:0">
+          <strong>Greece is mostly active by default</strong>
+          Unlike UK and France, most Greece automations are already set to Active. Review trigger dates when applying to a trip — adjust any that have already passed using <em>Automation Added → After Event</em> with a day offset.
+        </div>
+        <div class="auto-apply" style="margin-top:1.25rem">
+          <h4>⚙️ Auto-Apply</h4>
+          <p>Workflow auto-applies when the <code>greece</code> tag is added to a trip. Enable auto-apply in workflow settings once you're comfortable reviewing and adjusting trigger timings manually first.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- AMAZON -->
+  <section id="amazon">
+    <div class="section-eyebrow">Section 05</div>
+    <h2 class="section-title">Amazon Affiliate Links</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">Your email templates are built with passive income in mind. Three types of emails contain affiliate link placeholders — all links have been stripped from your templates and need to be replaced with your own before activating.</p>
+
+    <div class="affiliate-hero">
+      <div class="affiliate-pct">10%</div>
+      <div>
+        <h3>Commission potential</h3>
+        <p>Amazon Associates is free to join and offers up to 10% commission on qualifying purchases. Luggage and travel accessories earn 7%; guidebooks 4.5%. Your packing and inspiration emails are a natural fit — clients already trust your recommendations.</p>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-bottom:2rem">
+      <div class="feature-card">
+        <h3>Inspiration Emails — Storefront Link</h3>
+        <p>Each inspiration email links clients to "your Amazon page." Replace this with your personal Amazon storefront URL — a curated page of your favorite travel products.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Must See/Do Emails — Guidebook Links</h3>
+        <p>Link to recommended guidebooks: Lonely Planet, Rick Steves, DK Eyewitness, Moon Travel Guides. Each title gets its own unique affiliate link.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Packing Emails — Product Links</h3>
+        <p>UK &amp; Europe packing list emails include slots for packing cubes, travel adapters (Type G), rain layers, crossbody bags, money belts, and portable chargers.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Update Once, Apply Everywhere</h3>
+        <p>Edit a template in your Library and Tern propagates the change to all automations using it — update your affiliate links once and every future client gets the refreshed version.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Raleway',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--warm-slate);margin-bottom:1rem">How to create your Amazon Associates account</h3>
+
+    <div class="num-steps">
+      <div class="num-step">
+        <div class="num-step-n">1</div>
+        <div class="num-step-body"><h4>Sign up at Amazon Associates</h4><p>Go to <a href="https://affiliate-program.amazon.com/signup" target="_blank">affiliate-program.amazon.com/signup</a>. The program is free — no upfront cost. Use your existing Amazon account or create one.</p></div>
+      </div>
+      <div class="num-step">
+        <div class="num-step-n">2</div>
+        <div class="num-step-body"><h4>Enter your website or platform URL</h4><p>Your business website, Facebook page, or Instagram handle all qualify. Enter whichever platform you use to communicate with clients.</p></div>
+      </div>
+      <div class="num-step">
+        <div class="num-step-n">3</div>
+        <div class="num-step-body"><h4>Create your Store ID (affiliate tag)</h4><p>Choose something recognizable — like your business name. This ID is embedded in every link you share. Example: <code>bookedbeyond-20</code></p></div>
+      </div>
+      <div class="num-step">
+        <div class="num-step-n">4</div>
+        <div class="num-step-body"><h4>Set up your Amazon Storefront</h4><p>Once approved, create a storefront in Associates Central organized by category (e.g. "UK Packing Favorites", "France Travel Essentials"). This is the page you link to in inspiration emails.</p></div>
+      </div>
+      <div class="num-step">
+        <div class="num-step-n">5</div>
+        <div class="num-step-body"><h4>Make 3 qualifying sales within 180 days</h4><p>Amazon requires at least 3 sales in your first 180 days. Your packing list and Must See/Do emails are your fastest path — they go to every booked client automatically.</p></div>
+      </div>
+      <div class="num-step">
+        <div class="num-step-n">6</div>
+        <div class="num-step-body"><h4>Generate links and update your templates</h4><p>Use the SiteStripe toolbar (appears at the top of Amazon.com when logged into Associates) to get a short affiliate link for any product. Then update each template in Tern's Library.</p></div>
+      </div>
+    </div>
+
+    <div class="table-wrap" style="margin-top:1.5rem">
+      <table>
+        <thead>
+          <tr><th>Product Category</th><th>Relevant For</th><th>Commission</th><th>Cookie Window</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Books</td><td>Guidebook links in Must See/Do emails</td><td>4.5%</td><td>24 hrs (+ 90 days if added to cart)</td></tr>
+          <tr><td>Luggage &amp; Travel Accessories</td><td>Packing list product links</td><td>7%</td><td>24 hrs (+ 90 days if added to cart)</td></tr>
+          <tr><td>Clothing &amp; Shoes</td><td>Rain gear, walking shoes</td><td>4%</td><td>24 hrs (+ 90 days if added to cart)</td></tr>
+          <tr><td>Electronics &amp; Accessories</td><td>Travel adapters, power banks</td><td>4%</td><td>24 hrs (+ 90 days if added to cart)</td></tr>
+          <tr><td>Storefront Browse (any category)</td><td>Inspiration email link to your Amazon page</td><td>Varies</td><td>24 hrs from click</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip">
+      <strong>Disclosure requirement</strong>
+      Amazon requires you to disclose affiliate relationships. Add a short line to your email footer — something like: <em>"This email may contain affiliate links. I earn a small commission if you purchase through my links, at no extra cost to you."</em>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section id="tips">
+    <div class="section-eyebrow">Section 06</div>
+    <h2 class="section-title">Setup Tips &amp; Troubleshooting</h2>
+    <div class="section-rule"></div>
+
+    <div class="trouble-list">
+      <div class="trouble-item">
+        <h4>🔘 Activating automations</h4>
+        <p>Every automation has an Active/Inactive toggle. Automations must be <strong>Active</strong> to send automatically. If you're still building or testing, leave them Inactive. Use Task 2 ("Adjust &amp; activate automation timings") as your reminder to go back and turn them on.</p>
+      </div>
+      <div class="trouble-item">
+        <h4>⚠️ Bulk apply warning</h4>
+        <p>Bulk Apply fires immediately. If "Set automation to active when applied" is on, every existing trip in the batch will trigger the automation right away. Turn that setting off before running a Bulk Apply if you're not ready for emails to send.</p>
+      </div>
+      <div class="trouble-item">
+        <h4>📅 Trigger dates already passed?</h4>
+        <p>If you apply a workflow and the trigger date (e.g. "150 days before trip") has already passed, that automation will not fire. Switch the trigger to <em>Automation Added → After Event</em> with a day offset to bring it back into the trip window.</p>
+      </div>
+      <div class="trouble-item">
+        <h4>🏷️ Tags drive everything</h4>
+        <p>Tag a trip <code>uk</code> → UK workflow applies. Tag a trip <code>france</code> → France workflow applies. Tags can be added when creating the trip or at any point after — the workflow fires the moment the tag is added. You can apply multiple workflows to one trip.</p>
+      </div>
+      <div class="trouble-item">
+        <h4>✏️ Updating email templates</h4>
+        <p>When you edit a template in your Library, Tern can propagate that change to all automations and workflows already using it. Update affiliate links, refresh content, or add new tips — the change ripples out everywhere automatically.</p>
+      </div>
+      <div class="trouble-item">
+        <h4>📧 Email recipients</h4>
+        <p>For automations triggered by trip dates, choose recipients: <em>All travelers with Full Access</em> or <em>All travelers</em>. Make sure clients are added as travelers with Full Access before the automation fires, or they won't receive the email.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem">
+      <div class="section-eyebrow" style="margin-bottom:0.75rem">Quick checklist</div>
+      <ul class="checklist">
+        <li>Always Make a Copy before editing any shared template or workflow</li>
+        <li>Rename your copies clearly — include a custom note or your name</li>
+        <li>Check populated automation dates after applying any workflow</li>
+        <li>Sort by Status to confirm what's active and what's scheduled</li>
+        <li>Use the three-dot menu to swap emails in a workflow without rebuilding it</li>
+        <li>Leave EU Entry Requirements (EES) inactive until the official EU launch date is confirmed</li>
+        <li>Add affiliate link disclosure language to your email footers</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--warm-slate);border-radius:6px;padding:1.5rem 2rem;margin-top:2rem">
+      <div style="font-family:'Raleway',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cherry);margin-bottom:0.5rem">Questions?</div>
+      <p style="font-size:0.9rem;color:#c4a8b8">If you run into anything not covered here, reach out directly: <a href="mailto:katie@bookedandbeyond.co" style="color:var(--cherry);text-decoration:none">katie@bookedandbeyond.co</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div style="font-family:'Raleway',sans-serif;font-weight:800;font-size:20px;color:var(--cherry)">&amp;</div>
+  <div class="footer-rule"></div>
+  <p>Booked &amp; Beyond LLC · <a href="https://bookedandbeyond.com">bookedandbeyond.com</a></p>
+  <p style="margin-top:0.4rem;font-size:10px;letter-spacing:0.2em">Client Resource Guide v1.1 · Tools · Workflows · Training</p>
+</footer>
+
+<script>
+function toggleAccordion(bodyId, btn) {
+  var body = document.getElementById(bodyId);
+  var isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', !isOpen);
+}
+</script>
+</body>
+</html>
