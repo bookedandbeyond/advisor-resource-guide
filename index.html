@@ -257,8 +257,8 @@ footer a{color:var(--cherry);text-decoration:none}
         <div class="toc-sub">
           <a href="#how-it-works"><span class="toc-num">1.</span>How it all connects</a>
           <a href="#trigger-timings"><span class="toc-num">2.</span>Default trigger timings</a>
-          <a href="#europe-general"><span class="toc-num">3.</span>Europe general emails</a>
-          <a href="#uk"><span class="toc-num">4.</span>Destination workflows — UK, France, Greece</a>
+          <a href="#europe-general"><span class="toc-num">3.</span>Europe General workflow</a>
+          <a href="#uk"><span class="toc-num">4.</span>Destination workflow example — France</a>
           <a href="#amazon"><span class="toc-num">5.</span>Amazon affiliate links</a>
           <a href="#tips"><span class="toc-num">6.</span>Setup tips &amp; troubleshooting</a>
         </div>
@@ -443,125 +443,83 @@ footer a{color:var(--cherry);text-decoration:none}
   <!-- EUROPE GENERAL -->
   <section id="europe-general">
     <div class="section-eyebrow">Section 03</div>
-    <h2 class="section-title">🌍 Europe General</h2>
+    <h2 class="section-title">🌍 B&amp;B - Europe General Workflow</h2>
     <div class="section-rule"></div>
-    <p class="section-intro">These emails are available for all European trips and live in the BB Europe folder. They are designed to complement destination-specific workflows — add them to any European trip where a destination-specific version doesn't already cover the same topic.</p>
+    <p class="section-intro">B&amp;B - Europe General is its own standalone workflow designed to work alongside every destination-specific workflow. It covers the shared logistics emails that are the same regardless of destination: packing essentials, EU entry requirements (EES), Euro currency and tipping, and VAT refund guidance. Apply this workflow to every European trip alongside the country-specific workflow.</p>
 
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>Template Name</th>
-            <th>Purpose</th>
-            <th>Suggested Trigger</th>
-            <th>Notes</th>
+            <th>Automation</th>
+            <th>Trigger</th>
+            <th>Default Status</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Your European Packing List</td>
-            <td>General Europe packing tips with affiliate links</td>
+            <td>Packing List</td>
             <td>120 days before trip</td>
-            <td>Use where no destination-specific packing list exists</td>
+            <td><span class="pill pill-active">✓ Active</span></td>
           </tr>
           <tr>
-            <td>EU VAT Info</td>
-            <td>VAT refund eligibility and how to claim at departure</td>
-            <td>34 days before trip</td>
-            <td>Applies to EU member countries only</td>
-          </tr>
-          <tr>
-            <td>Money Matters – Europe</td>
-            <td>Currency, card tips, and spending advice for European Union destinations</td>
-            <td>34 days before trip</td>
-            <td>Designed for EU member countries. If the destination is not an EU member (e.g. UK, Switzerland, Norway), use the country-specific currency email instead</td>
-          </tr>
-          <tr>
-            <td>European Union Entry Requirements — EES</td>
-            <td>New EU Entry/Exit System (EES) requirement — timing to be determined</td>
+            <td>European Union New EES</td>
             <td>60 days before trip</td>
-            <td>Keep inactive until EES launch date is confirmed. EU member destinations only</td>
+            <td><span class="pill pill-active">✓ Active</span></td>
+          </tr>
+          <tr>
+            <td>Euro Currency</td>
+            <td>34 days before trip</td>
+            <td><span class="pill pill-active">✓ Active</span></td>
+          </tr>
+          <tr>
+            <td>VAT</td>
+            <td>10 days before trip</td>
+            <td><span class="pill pill-active">✓ Active</span></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="tip">
-      <strong>EU member vs. non-EU destinations</strong>
-      Money Matters – Europe and the EES entry requirement apply to European Union member countries. For non-EU destinations — including the United Kingdom, Switzerland, and Norway — use the country-specific currency and entry requirement emails in the destination workflow instead.
+    <div class="tip" style="margin-top:1.25rem">
+      <strong>All four automations ship as Active.</strong>
+      For countries with their own currency email (France, Italy, Spain), deactivate Euro Currency in this workflow and use the country-specific version instead. The UK is not an EU member and does not use this workflow — UK trips use the ETA, UK Currency, and UK VAT emails in the British Isles workflow.
+    </div>
+
+    <div class="tip" style="margin-top:0.75rem">
+      <strong>Every email template also lives in the Shared with Me section of your Tern Library.</strong>
+      You can send any template manually at any time, which is especially useful for short-turnaround trips where automated triggers have already passed.
+    </div>
+
+    <div class="auto-apply" style="margin-top:1.25rem">
+      <h4>⚙️ Auto-Apply</h4>
+      <p>Workflow auto-applies when the <code>europe</code> tag is added to a trip. Enable auto-apply in workflow settings once you're comfortable adjusting trigger timings manually first.</p>
     </div>
   </section>
 
   <!-- DESTINATION WORKFLOWS -->
   <section id="uk">
-    <div class="section-eyebrow">Sections 04 – 06</div>
-    <h2 class="section-title">Destination Workflows</h2>
+    <div class="section-eyebrow">Section 04</div>
+    <h2 class="section-title">Destination Workflow Example</h2>
     <div class="section-rule"></div>
-    <p class="section-intro">Each destination workflow contains the automations and tasks listed below. Click a destination to expand its full automation list. All three workflows share the same two tasks: <strong>Schedule send visa/eta email</strong> (due 7 days after task creation) and <strong>Adjust &amp; activate automation timings</strong> (due 10 days after task creation).</p>
-
-    <!-- UK ACCORDION -->
-    <div class="accordion" id="uk-accordion">
-      <button class="accordion-header" onclick="toggleAccordion('uk-body', this)" aria-expanded="false">
-        <div class="accordion-header-left">
-          <span class="accordion-flag">🇬🇧</span>
-          <div>
-            <div class="accordion-title">United Kingdom</div>
-            <div class="accordion-subtitle">London · Scotland · England</div>
-          </div>
-        </div>
-        <div class="accordion-meta">
-          <span class="accordion-count">11 automations</span>
-          <span class="accordion-chevron">▼</span>
-        </div>
-      </button>
-      <div class="accordion-body" id="uk-body">
-        <div class="table-wrap" style="margin-bottom:1.25rem">
-          <table>
-            <thead>
-              <tr><th>Automation Name</th><th>Trigger</th><th>Status</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>United Kingdom Inspiration <span style="font-size:0.78rem;color:#8a6878">(update with Amazon affiliate links)</span></td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>Scotland Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>London Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>Packing List</td><td>120 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-              <tr><td>ETA Requirement</td><td>60 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-              <tr><td>United Kingdom Transportation</td><td>40 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-              <tr><td>UK Currency</td><td>34 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-              <tr><td>UK Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>London Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>Scotland Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>UK VAT Notice</td><td>10 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="tip" style="margin-top:0">
-          <strong>Activate per sub-destination</strong>
-          Inspiration and Must See/Do emails cover UK broadly, London, and Scotland separately. Activate only the ones that match where your client is going — if they're visiting London only, activate London Inspiration and London Must See/Do and leave the others inactive.
-        </div>
-        <div class="auto-apply" style="margin-top:1.25rem">
-          <h4>⚙️ Auto-Apply</h4>
-          <p>Workflow auto-applies when the <code>uk</code> tag is added to a trip. Enable auto-apply in workflow settings once you're comfortable reviewing and adjusting trigger timings manually first.</p>
-        </div>
-      </div>
-    </div>
+    <p class="section-intro">Each destination has its own workflow containing country-specific automations. Apply the destination workflow alongside B&amp;B - Europe General. The France workflow below is shown as an example — every destination workflow follows the same structure. The country-overall Must See/Do and Inspiration emails are Active by default. Sub-destination emails are Inactive so you activate only the ones that match your client's itinerary.</p>
 
     <!-- FRANCE ACCORDION -->
     <div class="accordion" id="france-accordion">
-      <button class="accordion-header" onclick="toggleAccordion('france-body', this)" aria-expanded="false">
+      <button class="accordion-header" onclick="toggleAccordion('france-body', this)" aria-expanded="true">
         <div class="accordion-header-left">
           <span class="accordion-flag">🇫🇷</span>
           <div>
-            <div class="accordion-title">France</div>
-            <div class="accordion-subtitle">Paris · French Riviera · Monaco</div>
+            <div class="accordion-title">B&amp;B - France (incl France, Paris &amp; French Riviera)</div>
+            <div class="accordion-subtitle">France · Paris · French Riviera · 8 automations</div>
           </div>
         </div>
         <div class="accordion-meta">
-          <span class="accordion-count">14 automations</span>
-          <span class="accordion-chevron">▼</span>
+          <span class="accordion-count">8 automations</span>
+          <span class="accordion-chevron">▲</span>
         </div>
       </button>
-      <div class="accordion-body" id="france-body">
+      <div class="accordion-body" id="france-body" style="display:block">
 
         <a class="loom-badge" href="https://www.loom.com/share/9b7fad7a80434c19857cf0c2f077f166" target="_blank" rel="noopener" style="margin-bottom:1.25rem">
           <span class="loom-dot"></span>
@@ -574,30 +532,20 @@ footer a{color:var(--cherry);text-decoration:none}
               <tr><th>Automation Name</th><th>Trigger</th><th>Status</th></tr>
             </thead>
             <tbody>
-              <tr><td>French Riviera Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>Paris Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>France Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>Monaco Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>Packing List</td><td>120 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-              <tr><td>ETIAS Requirement <span style="font-size:0.78rem;color:#8a6878">(create when launched)</span></td><td>60 days before trip</td><td><span class="pill pill-inactive">Inactive — timing TBD</span></td></tr>
+              <tr><td>France Inspiration</td><td>150 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>French Riviera Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — activate as needed</span></td></tr>
+              <tr><td>Paris Inspiration</td><td>150 days before trip</td><td><span class="pill pill-activate">Inactive — activate as needed</span></td></tr>
               <tr><td>France Transportation</td><td>40 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
               <tr><td>Money Tips Paris</td><td>34 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-              <tr><td>France Must See &amp; Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>Monaco Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>French Riviera Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>Paris Must See &amp; Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — Activate</span></td></tr>
-              <tr><td>Euro VAT</td><td>10 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-              <tr><td>NEW # TBD European Union New ESS</td><td>None — TBD</td><td><span class="pill pill-inactive">Inactive — timing TBD</span></td></tr>
+              <tr><td>France Must See &amp; Do</td><td>30 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
+              <tr><td>French Riviera Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — activate as needed</span></td></tr>
+              <tr><td>Paris Must See &amp; Do</td><td>30 days before trip</td><td><span class="pill pill-activate">Inactive — activate as needed</span></td></tr>
             </tbody>
           </table>
         </div>
-        <div class="warning" style="margin-top:0;margin-bottom:1.25rem">
-          <strong>⚠️ ETIAS &amp; EES — both pending launch</strong>
-          Two automations are inactive with no trigger set. ETIAS (EU travel authorisation) and EES (EU Entry/Exit System) have not officially launched. Keep both inactive until launch dates are confirmed, then update the email template and trigger timing before activating.
-        </div>
         <div class="tip" style="margin-top:0">
-          <strong>Activate per sub-destination</strong>
-          France covers four sub-destinations. Activate only the inspiration and Must See/Do emails relevant to your client's itinerary — e.g. Paris Inspiration + Paris Must See &amp; Do for a Paris-only trip. Leave the others inactive.
+          <strong>Apply this workflow alongside B&amp;B - Europe General.</strong>
+          France Inspiration and France Must See &amp; Do are Active by default and cover any French itinerary. For trips to specific sub-destinations, also activate the matching Paris or French Riviera emails. Deactivate Euro Currency in the Europe General workflow for France trips and use Money Tips Paris instead, which covers Paris-specific spending advice.
         </div>
         <div class="auto-apply" style="margin-top:1.25rem">
           <h4>⚙️ Auto-Apply</h4>
@@ -606,47 +554,9 @@ footer a{color:var(--cherry);text-decoration:none}
       </div>
     </div>
 
-    <!-- GREECE ACCORDION -->
-    <div class="accordion" id="greece-accordion">
-      <button class="accordion-header" onclick="toggleAccordion('greece-body', this)" aria-expanded="false">
-        <div class="accordion-header-left">
-          <span class="accordion-flag">🇬🇷</span>
-          <div>
-            <div class="accordion-title">Greece</div>
-            <div class="accordion-subtitle">Greece · Islands</div>
-          </div>
-        </div>
-        <div class="accordion-meta">
-          <span class="accordion-count">7 automations</span>
-          <span class="accordion-chevron">▼</span>
-        </div>
-      </button>
-      <div class="accordion-body" id="greece-body">
-        <div class="table-wrap" style="margin-bottom:1.25rem">
-          <table>
-            <thead>
-              <tr><th>Automation Name</th><th>Trigger</th><th>Status</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Greece Inspiration</td><td>150 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-              <tr><td>Packing List</td><td>120 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-              <tr><td>ETIAS Requirement <span style="font-size:0.78rem;color:#8a6878">(create when launched)</span></td><td>60 days before trip</td><td><span class="pill pill-inactive">Inactive — timing TBD</span></td></tr>
-              <tr><td>Euro Currency</td><td>34 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-              <tr><td>Greece Must See/Do</td><td>30 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-              <tr><td>VAT</td><td>10 days before trip</td><td><span class="pill pill-active">✓ Active</span></td></tr>
-              <tr><td>NEW # TBD European Union New ESS</td><td>None — TBD</td><td><span class="pill pill-inactive">Inactive — timing TBD</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="tip" style="margin-top:0">
-          <strong>Greece is mostly active by default</strong>
-          Unlike UK and France, most Greece automations are already set to Active. Review trigger dates when applying to a trip — adjust any that have already passed using <em>Automation Added → After Event</em> with a day offset.
-        </div>
-        <div class="auto-apply" style="margin-top:1.25rem">
-          <h4>⚙️ Auto-Apply</h4>
-          <p>Workflow auto-applies when the <code>greece</code> tag is added to a trip. Enable auto-apply in workflow settings once you're comfortable reviewing and adjusting trigger timings manually first.</p>
-        </div>
-      </div>
+    <div class="tip" style="margin-top:1.5rem">
+      <strong>Full workflow details for every destination</strong>
+      Each series includes a complete setup guide with the full automation list, default statuses, and auto-apply tags for every destination. See your series guide (PDF) or visit the <a href="https://bookedandbeyond.github.io/series-guides/" style="color:var(--cherry)">online series guides</a> for the complete reference.
     </div>
 
   </section>
@@ -783,7 +693,7 @@ footer a{color:var(--cherry);text-decoration:none}
 
     <div style="background:var(--warm-slate);border-radius:6px;padding:1.5rem 2rem;margin-top:2rem">
       <div style="font-family:'Raleway',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cherry);margin-bottom:0.5rem">Questions?</div>
-      <p style="font-size:0.9rem;color:#c4a8b8">If you run into anything not covered here, reach out directly: <a href="mailto:katie@bookedandbeyond.co" style="color:var(--cherry);text-decoration:none">katie@bookedandbeyond.co</a></p>
+      <p style="font-size:0.9rem;color:#c4a8b8">If you run into anything not covered here, reach out directly: <a href="mailto:hello@bookedandbeyond.co" style="color:var(--cherry);text-decoration:none">hello@bookedandbeyond.co</a></p>
     </div>
   </section>
 
